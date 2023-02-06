@@ -1,0 +1,16 @@
+.header {
+  background-color: #e0dddd;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
+
+  &__login, &__signup, &__logout {
+    padding: 15px;
+    background-color: #8be3cf;
+    margin-left: 15px;
+    border-radius: 10px;
+  }
+}
+
+
