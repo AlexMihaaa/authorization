@@ -1,0 +1,49 @@
+input {
+  border-bottom: solid 1px #000;
+  height: 40px;
+  margin-top: 13px;
+  display: block;
+}
+
+.login {
+  width: 472px;
+  height: 285px;
+  background-color: #e1e1e1;
+  border-radius: 24px;
+  padding: 32px 24px 68px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 27px;
+  }
+
+  &__title {
+
+  }
+
+  &__close {
+  }
+
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  &__email {
+
+  }
+
+  &__password {
+  }
+
+  &__submit {
+    display: block;
+    border: 1.4px solid #000000;
+    border-radius: 12px;
+    padding: 7px;
+  }
+}
+

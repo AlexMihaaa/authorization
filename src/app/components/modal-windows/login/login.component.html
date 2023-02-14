@@ -1,1 +1,11 @@
-<p>login works!</p>
+<div class='login' (mousedown)="$event.stopPropagation()">
+  <div class='login__header'>
+    <h1 class='login__title'>Вход</h1>
+    <button (click)='close()' class='login__close'>Х</button>
+  </div>
+  <form class='login__form form'>
+    <input class='form__email' type='email' placeholder='Email'>
+    <input class='form__password' type='password' placeholder='Пароль'>
+    <button class='form__submit'>Вход с Google</button>
+  </form>
+</div>

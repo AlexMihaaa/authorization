@@ -1,1 +1,10 @@
-<p>modal-windows works!</p>
+<div
+  (mousedown)="close($event)"
+  id="close"
+  class="background"
+>
+  <div class='window' [ngSwitch]="modalService.modalForm">
+    <ng-template ngSwitchCase="login"><app-login></app-login></ng-template>
+    <ng-template ngSwitchCase="registration"><app-signup></app-signup></ng-template>
+  </div>
+</div>
