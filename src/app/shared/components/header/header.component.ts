@@ -1,18 +1,17 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core'
 import { Store } from '@ngrx/store'
 import { AsyncPipe, NgIf } from '@angular/common'
+import { Observable } from 'rxjs'
 
 import { ModalService } from '../../../module/auth/modal/services/modal.service'
 import { LoaderComponent } from '../loader/loader.component'
 import { openModalForm } from '../../../store/modal/modal.actions'
-import { Observable } from 'rxjs'
 import { CurrentUserInterface } from '../../types/currentUser.interface'
 import {
   currentUserSelector,
   isAnonymousSelector,
   isLoggedInSelector,
 } from '../../../store/auth/selectors/auth.selector'
-import { AuthStateInterface } from '../../../store/auth/models/authState.interface'
 import { AppStateInterface } from '../../types/appState.interface'
 
 @Component({

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { mergeMap, of, switchMap, tap } from 'rxjs'
+import { of, switchMap, tap } from 'rxjs'
 import { Actions, createEffect, ofType } from '@ngrx/effects'
 
 import { ModalService } from '../../module/auth/modal/services/modal.service'

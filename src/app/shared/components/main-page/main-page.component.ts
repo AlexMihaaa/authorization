@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+
 import { ModalWindowsComponent } from '../../../module/auth/modal/components/modal-windows/modal-windows.component'
 
 @Component({
