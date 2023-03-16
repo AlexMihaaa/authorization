@@ -1,0 +1,31 @@
+<div class='login' (mousedown)="$event.stopPropagation()">
+  <div class='login__header'>
+    <h1 class='login__title'>Вход</h1>
+    <button (click)='close()' class='login__close'>Х</button>
+  </div>
+  <form
+    [formGroup]="form"
+    (ngSubmit)="submit()"
+    class='login__form form'
+  >
+    <app-backend-error-message
+      *ngIf="backEndErrors$ | async"
+      [backendErrorMessage]="backEndErrors$ | async"
+    >
+    </app-backend-error-message>
+    <input
+      formControlName="login"
+      class='form__login'
+      type='text'
+      placeholder='Логин'
+    >
+    <input
+      formControlName="password"
+      class='form__password'
+      type='password'
+      placeholder='Пароль'
+    >
+    <button [disabled]="isSubmitting$ | async" class='form__submit'>Вход</button>
+    <button class='form__submit'>Вход с Google</button>
+  </form>
+</div>

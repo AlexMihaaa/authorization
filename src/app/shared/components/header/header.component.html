@@ -1,0 +1,7 @@
+<header class='header'>
+  <ng-container>
+    <button class='header__login' (click)="showModal('login')">Авторизация</button>
+    <button class='header__signup' (click)="showModal('registration')">Регистрация</button>
+  </ng-container>
+  <button *ngIf="isLoggedIn$ | async" class='header__logout'>Выход</button>
+</header>

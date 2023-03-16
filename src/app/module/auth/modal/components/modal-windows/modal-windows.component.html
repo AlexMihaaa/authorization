@@ -1,0 +1,10 @@
+<div
+  (mousedown)="close(modalService.modalForm)"
+  id="close"
+  class="background"
+>
+  <div class='window' [ngSwitch]="modalService.modalForm">
+    <ng-template ngSwitchCase="login"><app-login></app-login></ng-template>
+    <ng-template ngSwitchCase="registration"><app-signup></app-signup></ng-template>
+  </div>
+</div>
