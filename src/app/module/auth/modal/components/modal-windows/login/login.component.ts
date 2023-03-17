@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
 import { Store } from '@ngrx/store'
 import {
   FormBuilder,
@@ -24,6 +24,7 @@ import { BackendErrorMessageComponent } from '../../../../../../shared/component
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [ReactiveFormsModule, AsyncPipe, BackendErrorMessageComponent, NgIf],
 })

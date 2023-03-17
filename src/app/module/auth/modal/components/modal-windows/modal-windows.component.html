@@ -1,10 +1,13 @@
-<div
-  (mousedown)="close(modalService.modalForm)"
-  id="close"
-  class="background"
->
-  <div class='window' [ngSwitch]="modalService.modalForm">
-    <ng-template ngSwitchCase="login"><app-login></app-login></ng-template>
-    <ng-template ngSwitchCase="registration"><app-signup></app-signup></ng-template>
+<ng-container *ngIf="modalForm$ | async as modalForm">
+  <div
+    (mousedown)="close(modalForm)"
+    id="close"
+    class="background"
+  >
+    <div class='window' [ngSwitch]="modalForm">
+      <ng-template ngSwitchCase="login"><app-login></app-login></ng-template>
+      <ng-template ngSwitchCase="registration"><app-signup></app-signup></ng-template>
+    </div>
   </div>
-</div>
+</ng-container>
+

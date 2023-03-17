@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
 import {
   FormBuilder,
   FormGroup,
@@ -26,6 +26,7 @@ import { closeModalForm } from '../../../../../../store/modal/modal.actions'
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [ReactiveFormsModule, AsyncPipe, BackendErrorMessageComponent, NgIf],
   providers: [AuthService],
 })

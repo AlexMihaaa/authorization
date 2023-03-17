@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
 
 import { ModalWindowsComponent } from '../../../module/auth/modal/components/modal-windows/modal-windows.component'
 
@@ -8,5 +8,6 @@ import { ModalWindowsComponent } from '../../../module/auth/modal/components/mod
   styleUrls: ['./main-page.component.scss'],
   standalone: true,
   imports: [ModalWindowsComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainPageComponent {}

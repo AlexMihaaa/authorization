@@ -4,9 +4,7 @@ import { StateInterfaceModal } from './models/state.interface'
 import { closeModalForm, openModalForm } from './modal.actions'
 
 export const initialStateModal: StateInterfaceModal = {
-  isLoading: false,
-  nameForm: '',
-  error: null,
+  nameForm: null,
 }
 
 export const modalReducer = createReducer(
@@ -18,6 +16,6 @@ export const modalReducer = createReducer(
 
   on(closeModalForm, state => ({
     ...state,
-    nameForm: '',
+    nameForm: null,
   }))
 )

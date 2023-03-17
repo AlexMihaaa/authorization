@@ -1,4 +1,4 @@
-export enum ActionTypes {
+export enum ActionTypesEnum {
   REGISTER = '[Register] Register',
   REGISTER_SUCCESS = '[Register] Register success',
   REGISTER_FAILURE = '[Register] Register _Failure',

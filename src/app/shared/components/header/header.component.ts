@@ -1,4 +1,9 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core'
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  ViewContainerRef,
+} from '@angular/core'
 import { Store } from '@ngrx/store'
 import { AsyncPipe, NgIf } from '@angular/common'
 import { Observable } from 'rxjs'
@@ -20,6 +25,7 @@ import { AppStateInterface } from '../../types/appState.interface'
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
   isLoggedIn$?: Observable<boolean | null>

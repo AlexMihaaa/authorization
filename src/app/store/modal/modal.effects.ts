@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { of, switchMap, tap } from 'rxjs'
+import { tap } from 'rxjs'
 import { Actions, createEffect, ofType } from '@ngrx/effects'
 
 import { ModalService } from '../../module/auth/modal/services/modal.service'
@@ -13,7 +13,7 @@ export class FormEffects {
     () =>
       this.actions$.pipe(
         ofType(openModalForm),
-        switchMap(({ nameForm }) => of(this.modalService.createModal(nameForm)))
+        tap(() => this.modalService.createModal())
       ),
     { dispatch: false }
   )
@@ -22,7 +22,7 @@ export class FormEffects {
     () =>
       this.actions$.pipe(
         ofType(closeModalForm),
-        tap(({ nameForm }) => this.modalService.removeModal())
+        tap(() => this.modalService.removeModal())
       ),
     { dispatch: false }
   )
