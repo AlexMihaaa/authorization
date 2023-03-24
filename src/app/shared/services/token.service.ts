@@ -5,21 +5,10 @@ import { Injectable } from '@angular/core'
 })
 export class TokenService {
   set(key: string, data: any): void {
-    try {
-      localStorage.setItem(key, JSON.stringify(data))
-    } catch (error) {
-      console.log('Ошибка сохранения токена.', error)
-    }
+    localStorage.setItem(key, data)
   }
 
   get(key: string): any {
-    try {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      return JSON.parse(localStorage.getItem(key))
-    } catch (error) {
-      console.log('Ошибка получения токена.', error)
-      return null
-    }
+    return localStorage.getItem(key)
   }
 }

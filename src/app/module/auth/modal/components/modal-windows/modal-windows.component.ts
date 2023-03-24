@@ -24,18 +24,10 @@ import { nameFormSelector } from '../../../../../store/modal/modal.selector'
     NgIf,
   ],
 })
-export class ModalWindowsComponent implements OnInit {
-  modalForm$!: Observable<string | null>
+export class ModalWindowsComponent {
+  modalForm$: Observable<string | null> = this.store.select(nameFormSelector)
 
   constructor(private store: Store<AppStateInterface>) {}
-
-  ngOnInit() {
-    this.initializeValues()
-  }
-
-  initializeValues() {
-    this.modalForm$ = this.store.select(nameFormSelector)
-  }
 
   close(nameForm: string) {
     this.store.dispatch(closeModalForm({ nameForm }))

@@ -61,6 +61,6 @@ export class LoginComponent implements OnInit {
   }
 
   close() {
-    this.store.dispatch(closeModalForm({ nameForm: 'registration' }))
+    this.store.dispatch(closeModalForm({ nameForm: 'login' }))
   }
 }

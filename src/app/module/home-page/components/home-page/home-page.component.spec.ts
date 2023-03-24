@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
 import { HomePageComponent } from './home-page.component'
+import { provideMockStore } from '@ngrx/store/testing'
 
 describe('UserPageComponent', () => {
   let component: HomePageComponent
@@ -8,7 +9,8 @@ describe('UserPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HomePageComponent],
+      imports: [HomePageComponent],
+      providers: [provideMockStore({})],
     }).compileComponents()
 
     fixture = TestBed.createComponent(HomePageComponent)
