@@ -5,22 +5,23 @@ import {
   ViewContainerRef,
 } from '@angular/core'
 import { Store } from '@ngrx/store'
-import { AsyncPipe, NgIf } from '@angular/common'
+import { AsyncPipe, JsonPipe, NgIf } from '@angular/common'
 import { Observable } from 'rxjs'
 
-import { ModalService } from '../../../module/auth/modal/services/modal.service'
-import { LoaderComponent } from '../loader/loader.component'
-import { openModalForm } from '../../../store/modal/modal.actions'
-import { CurrentUserInterface } from '../../types/currentUser.interface'
 import {
   currentUserSelector,
   isAnonymousSelector,
   isLoggedInSelector,
 } from '../../../store/auth/selectors/auth.selector'
+import { ModalService } from '../../../module/auth/modal/services/modal.service'
+import { LoaderComponent } from '../loader/loader.component'
+import { openModalForm } from '../../../store/modal/modal.actions'
+import { CurrentUserInterface } from '../../types/currentUser.interface'
 import { AppStateInterface } from '../../types/appState.interface'
+import { logoutAction } from '../../../store/auth/actions/logout.action'
 
 @Component({
-  imports: [LoaderComponent, NgIf, AsyncPipe],
+  imports: [LoaderComponent, NgIf, AsyncPipe, JsonPipe],
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
@@ -48,6 +49,10 @@ export class HeaderComponent implements OnInit {
     this.isLoggedIn$ = this.store.select(isLoggedInSelector)
     this.isAnonymous$ = this.store.select(isAnonymousSelector)
     this.currentUser$ = this.store.select(currentUserSelector)
+  }
+
+  logout() {
+    this.store.dispatch(logoutAction())
   }
 
   showModal(authModal: string) {

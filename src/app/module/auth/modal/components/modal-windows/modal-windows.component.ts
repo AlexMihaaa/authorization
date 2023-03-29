@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
 import { AsyncPipe, NgIf, NgSwitch, NgSwitchCase } from '@angular/common'
 import { Store } from '@ngrx/store'
 import { Observable } from 'rxjs'
@@ -6,7 +6,6 @@ import { Observable } from 'rxjs'
 import { LoginComponent } from './login/login.component'
 import { SignupComponent } from './signup/signup.component'
 import { closeModalForm } from '../../../../../store/modal/modal.actions'
-import { AppStateInterface } from '../../../../../store/modal/models/app-state.interface'
 import { nameFormSelector } from '../../../../../store/modal/modal.selector'
 
 @Component({
@@ -27,7 +26,7 @@ import { nameFormSelector } from '../../../../../store/modal/modal.selector'
 export class ModalWindowsComponent {
   modalForm$: Observable<string | null> = this.store.select(nameFormSelector)
 
-  constructor(private store: Store<AppStateInterface>) {}
+  constructor(private store: Store) {}
 
   close(nameForm: string) {
     this.store.dispatch(closeModalForm({ nameForm }))

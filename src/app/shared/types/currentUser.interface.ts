@@ -1,5 +1,6 @@
+import { UserInterface } from './user.interface'
+
 export interface CurrentUserInterface {
-  id: number
-  login: string
   access_token: string
+  user: UserInterface
 }

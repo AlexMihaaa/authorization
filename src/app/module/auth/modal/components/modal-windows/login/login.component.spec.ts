@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { MockStore, provideMockStore } from '@ngrx/store/testing'
 
 import { LoginComponent } from './login.component'
-import { initialState } from '../../../../../../store/auth/reducers/register.reducer'
+import { initialState } from '../../../../../../store/auth/reducers/auth.reducer'
 import { AuthStateInterface } from '../../../../../../store/auth/models/authState.interface'
 import { closeModalForm } from '../../../../../../store/modal/modal.actions'
 import {

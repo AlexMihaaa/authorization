@@ -1,4 +1,4 @@
 export interface AuthRequestInterface {
-  login: string
+  username: string
   password: string
 }

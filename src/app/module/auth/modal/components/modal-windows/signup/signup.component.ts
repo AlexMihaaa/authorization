@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
 import {
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms'
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
 import { Store } from '@ngrx/store'
 import { Observable } from 'rxjs'
 import { AsyncPipe, NgIf } from '@angular/common'
@@ -52,7 +52,7 @@ export class SignupComponent implements OnInit {
 
   initializeForm() {
     this.form = this.fb.group({
-      login: ['', Validators.required],
+      username: ['', Validators.required],
       password: ['', Validators.required],
     })
   }
