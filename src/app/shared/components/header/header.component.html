@@ -1,8 +1,27 @@
 <header class='header'>
-  <ng-container *ngIf="isAnonymous$ | async">
-    <button class='header__login' (click)="showModal('login')">Авторизация</button>
-    <button class='header__signup' (click)="showModal('registration')">Регистрация</button>
+  <ng-container *ngIf="isAnonymous$ | async" class="header__buttons">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="showModal('login')"
+    >
+      Aвторизация
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="showModal('registration')"
+    >
+      Регистрация
+    </button>
   </ng-container>
   <p class="header__user-name">{{ (currentUser$ | async)?.user?.username }}</p>
-  <button *ngIf="isLoggedIn$ | async" (click)="logout()" class='header__logout'>Выход</button>
+  <button
+    mat-raised-button
+    color="primary"
+    *ngIf="isLoggedIn$ | async"
+    (click)="logout()"
+  >
+    Выход
+  </button>
 </header>

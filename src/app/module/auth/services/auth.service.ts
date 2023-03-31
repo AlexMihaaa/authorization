@@ -1,9 +1,9 @@
+import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { Observable } from 'rxjs'
-import { HttpClient } from '@angular/common/http'
 
-import { CurrentUserInterface } from '../../../shared/types/currentUser.interface'
 import { environment } from '../../../../environments/environment'
+import { CurrentUserInterface } from '../../../shared/types/currentUser.interface'
 import { AuthRequestInterface } from '../../../store/auth/models/authRequest.interface'
 import { AuthResponseInterface } from '../../../store/auth/models/authResponse.interface'
 

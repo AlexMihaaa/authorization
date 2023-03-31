@@ -7,6 +7,7 @@ import {
 import { Store } from '@ngrx/store'
 import { AsyncPipe, JsonPipe, NgIf } from '@angular/common'
 import { Observable } from 'rxjs'
+import { MatButtonModule } from '@angular/material/button'
 
 import {
   currentUserSelector,
@@ -21,7 +22,7 @@ import { AppStateInterface } from '../../types/appState.interface'
 import { logoutAction } from '../../../store/auth/actions/logout.action'
 
 @Component({
-  imports: [LoaderComponent, NgIf, AsyncPipe, JsonPipe],
+  imports: [LoaderComponent, NgIf, AsyncPipe, JsonPipe, MatButtonModule],
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],

@@ -17,6 +17,7 @@ import { GetCurrentUserEffectEffect } from './app/store/auth/effects/getCurrentU
 import { TokenService } from './app/shared/services/token.service'
 import { AuthInterceptor } from './app/shared/services/auth.interceptor'
 import { LogoutUserEffect } from './app/store/auth/effects/logout.effect'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -32,7 +33,8 @@ bootstrapApplication(AppComponent, {
         LogoutUserEffect,
       ]),
       HttpClientModule,
-      TokenService
+      TokenService,
+      BrowserAnimationsModule
     ),
     {
       provide: HTTP_INTERCEPTORS,

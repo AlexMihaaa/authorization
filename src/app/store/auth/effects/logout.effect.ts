@@ -1,4 +1,4 @@
-import { switchMap, map, catchError, of } from 'rxjs'
+import { switchMap, map, catchError, of, tap } from 'rxjs'
 import { Actions, createEffect, ofType } from '@ngrx/effects'
 import { Injectable } from '@angular/core'
 import { Router } from '@angular/router'
@@ -26,8 +26,6 @@ export class LogoutUserEffect {
       switchMap(() => {
         return this.authService.logout().pipe(
           map(() => {
-            this.tokenService.clear()
-            this.router.navigate(['/'])
             return logoutSuccessAction()
           }),
           catchError(() => {
@@ -36,5 +34,17 @@ export class LogoutUserEffect {
         )
       })
     )
+  )
+
+  logoutSuccessUser$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(logoutSuccessAction),
+        tap(() => {
+          this.tokenService.clear()
+          this.router.navigate(['/'])
+        })
+      ),
+    { dispatch: false }
   )
 }
